@@ -1,7 +1,7 @@
 ---
 # Warning: This file is auto-generated from the Contentful CMS. Local changes will overriden on next sync.
 
-title: <%= @title %>
+title: "<%= @title %>"
 date: <%= @date.strftime('%F %R %Z') %>
 tags: <%= @tags.join(', ') %>
 ---

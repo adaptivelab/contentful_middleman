@@ -45,7 +45,7 @@ module Middleman
             tags  = value_from_object(entry, blog_post_mappings[:tags]) || []
             body  = value_from_object(entry, blog_post_mappings[:body])
 
-            @title = title
+            @title = title.gsub('"', '\"')
             @slug  = slug || safe_parameterize(title)
             @date  = date ? Time.zone.parse(date) : Time.zone.now
             @tags  = tags
