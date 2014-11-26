@@ -14,6 +14,7 @@ module ContentfulMiddleman
 
     self.supports_multiple_instances = false
 
+    option :api_url, 'cdn.contentful.com', 'The Contentful API url'
     option :space, nil, 'The Contentful Space ID'
     option :access_token, nil, 'The Contentful Content Delivery API access token'
 
@@ -55,7 +56,8 @@ module ContentfulMiddleman
       @client ||= Contentful::Client.new(
         access_token: options.access_token,
         space: options.space,
-        dynamic_entries: :auto
+        dynamic_entries: :auto,
+        api_url: options.api_url
       )
     end
 
